@@ -1,0 +1,32 @@
+.crafts {
+	min-height: 202px;
+}
+.craft {
+	border: 2px solid rgb(146, 146, 146);
+	margin: 10px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	background-color: rgb(189, 189, 189);
+}
+.craft > div{ 
+	padding: 5px;
+	text-align: center;
+}
+.crafted_count {
+	opacity: .7;
+	margin: auto;
+}
+.crafted_img {
+	width: 70px;
+}
+.crafted_name {
+	font-weight: bold;
+	color: rgb(6, 15, 53);
+}
+.crafted_button {
+	width: 100%;
+	background-color: rgb(78, 145, 190);
+}
+.result_card {
+	background-color: rgb(228, 228, 228);
+}

@@ -1,0 +1,83 @@
+.jobs-container{
+	padding: 7px;
+	max-width: 400px;
+	margin: auto;
+}
+
+/* .my-jobs {} */
+
+.jobs-header::before, .jobs-header::after{
+	color: rgb(88, 88, 88);
+	content: ' --- ';
+}
+
+.jobs-header{
+	text-align: center;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.job {
+	position: relative;
+	background-color: rgb(228, 228, 228);
+	padding: 10px;
+	margin-bottom: 8px;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+.job-title {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+.job-logo {
+	width: 70px;
+}
+.job-name {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.job-info {
+	text-align: center;
+}
+.job-salary::before {
+	content: '$';
+}
+.job-salary, .job-work-time {
+	width: 70px;
+}
+.job-salary {
+	margin-bottom: 5px;
+	background-color: rgb(131, 175, 131);
+	color: rgb(0, 41, 0);
+	font-weight: bold;
+}
+.job-work-time {
+	background-color: rgb(184, 184, 184);
+	color: rgb(68, 68, 68);
+}
+
+.event_button{ 
+	width: 70px;
+	margin-top: 3px;
+}
+.job-salary-work-button {
+	background-color: rgb(0, 128, 128);
+}
+.job-buy-work-button{
+	background-color: red;
+}
+.job-price{ 
+	position: absolute;
+	right: 5px;
+	top: -15px;
+	background-color: red;
+	color: white;
+	padding: 4px 7px;
+	height: 25px;
+}
+
+.in-work{
+	background-color: yellow;
+	color: rgb(108, 108, 0);
+}
