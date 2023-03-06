@@ -20,6 +20,6 @@ function for_new_players() {
 		localStorage.setItem('all_items', JSON.stringify(bonus));
 		localStorage.setItem('update', 0);
 		localStorage.setItem('money', 260);
-		localStorage.setItem('my_jobs', JSON.stringify([['Factory', 'fac', 10, 30]]));
+		localStorage.setItem('my_jobs', JSON.stringify([['Factory', 'fac', 10, 3]]));
 	}
 }
