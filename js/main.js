@@ -2,7 +2,7 @@ for_new_players();
 
 // ==- PROMO's -===================
 promo_add('Gold', 9_900); 
-promo_add('NCoin', 6_800); 
+promo_add('NCoin', 10); 
 
 // ==- CRAFT'a add -====================
 craft_add('Gold Box', 'Box', 'Gold', 1, 1, 1, 'box_gold', 'Box', 'gold_material', 10_100);
