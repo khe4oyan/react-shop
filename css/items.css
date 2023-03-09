@@ -11,7 +11,7 @@ h2 {
 .items-container {
 	min-height: 210px;
 	max-width: 1080px;
-	max-height: 250px;
+	max-height: 70vh;
 	overflow-y: scroll;
 	margin: auto;
 	margin-bottom: 3rem;

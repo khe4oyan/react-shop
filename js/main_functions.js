@@ -23,3 +23,27 @@ function for_new_players() {
 		localStorage.setItem('my_jobs', JSON.stringify([['Factory', 'fac', 10, 3]]));
 	}
 }
+
+function categories() {
+	const cat_shop = document.querySelector('.categories_shop');
+	const cat_my = document.querySelector('.categories_my');
+
+	const shop = document.querySelector('.shop');
+	const my = document.querySelector('.my-items');
+
+	my.style.display = 'none';
+
+	cat_shop.addEventListener('click', () => {
+		my.style.display = 'none';
+		shop.style.display = 'block';
+		cat_my.classList.remove('categories_select');
+		cat_shop.classList.add('categories_select');
+	});
+	
+	cat_my.addEventListener('click', () => {
+		shop.style.display = 'none';
+		my.style.display = 'block';
+		cat_my.classList.add('categories_select');
+		cat_shop.classList.remove('categories_select');
+	});
+}
