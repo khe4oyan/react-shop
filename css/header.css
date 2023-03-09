@@ -1,4 +1,6 @@
 header {
+	position: sticky;
+	top: 0;
 	text-align: center;
 	/* border-bottom: 3px solid; */
 	border-radius: 0;
