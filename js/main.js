@@ -17,4 +17,4 @@ shop_add('Box', 'box', 10);
 shop_add('Car', 'car', 2_000);
 shop_add('UFO', 'ufo', 999_999);
 shop_add('Gold', 'gold_material', 10_000);
-shop_add('NCoin', 'ncoin', 6_800);
+shop_add('NCoin', 'ncoin', 10);
