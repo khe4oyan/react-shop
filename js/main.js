@@ -1,5 +1,5 @@
-for_new_players();
 categories();
+for_new_players();
 
 // ==- PROMO's -===================
 promo_add('Gold', 9_900); 

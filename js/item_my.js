@@ -36,8 +36,8 @@ class Item_my extends Item{
 		item.appendChild(button);
 
 		button.addEventListener('click', () => {
-			this.click.bind(this);
-			this.click(storage, item);
+			this.take.bind(this);
+			this.take(storage, item);
 		});
 
 		this.html_elem = item;
@@ -53,8 +53,12 @@ class Item_my extends Item{
 		}
 
 		this.count_elem.innerText = this.count;
-		storage.money_add(this.price);
 		Craft.craft_check(storage);
+	}
+
+	take(storage) {
+		this.click(storage);
+		storage.money_add(this.price);
 	}
 
 	add_item() {

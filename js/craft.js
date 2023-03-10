@@ -47,7 +47,7 @@ class Craft {
 			for (let i = 0; i < count; ++i) { // give any time
 				Craft.storage.item_add(name, img, Craft.salary_get(name));
 			}
-
+			
 			for (let i = 0; i < c1; ++i) {
 				Craft.storage.items_object[i1].click(Craft.storage)
 			}
