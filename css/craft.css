@@ -1,9 +1,12 @@
 .crafts {
 	min-height: 202px;
+	padding: 10px;
 }
 .craft {
 	border: 2px solid rgb(146, 146, 146);
-	margin: 10px;
+	max-width: 400px;
+	margin: auto;
+	margin-bottom: 10px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	background-color: rgb(189, 189, 189);

@@ -45,6 +45,7 @@ class Craft {
 
 		crafted_button.addEventListener('click', () => {
 			for (let i = 0; i < count; ++i) { // give any time
+				if(name[0] == '#') { name = Craft.name_fix(name); }
 				Craft.storage.item_add(name, img, Craft.salary_get(name));
 			}
 			
@@ -60,6 +61,10 @@ class Craft {
 		card.appendChild(crafted_button);
 
 		return card;
+	}
+
+	static name_fix(name) {
+		return name.split('#').join('');
 	}
 
 	static salary_get(name) {
