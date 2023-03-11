@@ -15,13 +15,15 @@ class Item_shop extends Item{
 		button.addEventListener('click', () => {
 			// have money
 			if (storage.money < this.price) {
-				console.log('You dont have money');
+				console.log();
+				new Message('You dont have money', 'red');
 				return;
 			}
 			// remove money
 			storage.money_take(this.price);
 			// add item in my items list
 			storage.item_add(this.name, this.img, this.price);
+			new Message(`You buy ${this.name}`, 'green');
 			Craft.craft_check(storage);
 		});
 

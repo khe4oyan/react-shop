@@ -38,6 +38,7 @@ class Item_my extends Item{
 		button.addEventListener('click', () => {
 			this.take.bind(this);
 			this.take(storage, item);
+			new Message(`You sell ${this.name}`, 'red');
 		});
 
 		this.html_elem = item;

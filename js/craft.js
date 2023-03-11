@@ -44,6 +44,7 @@ class Craft {
 		crafted_button.innerText = 'craft';
 
 		crafted_button.addEventListener('click', () => {
+			new Message(`You crafted ${name}`, 'craft');
 			for (let i = 0; i < count; ++i) { // give any time
 				if(name[0] == '#') { name = Craft.name_fix(name); }
 				Craft.storage.item_add(name, img, Craft.salary_get(name));
@@ -57,6 +58,8 @@ class Craft {
 				Craft.storage.items_object[i2].click(Craft.storage)
 			}
 		});
+
+		// new Message(`You can craft ${name}`, 'info');
 
 		card.appendChild(crafted_button);
 

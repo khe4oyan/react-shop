@@ -30,6 +30,7 @@ class My_Job extends Job{
 				time_elem.innerText = this.time + 's';
 				time_elem.classList.toggle('in-work');
 				Job.storage.money_add(this.salary);
+				new Message(`You got ${this.salary}$`, 'green');
 				Job.work_now = false;
 			}, this.time * 1000 + 1000);
 		});
