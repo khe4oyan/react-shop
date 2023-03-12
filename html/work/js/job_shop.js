@@ -21,6 +21,8 @@ class Shop_Job extends Job {
 				Job.storage.money_take(this.job_price);
 				this.html_elem.remove();
 				Job.storage.add_my_jobs(this.name, this.img, this.salary, this.time);
+			}else {
+				new Message('You dont have money', 'red');
 			}
 		});
 

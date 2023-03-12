@@ -9,20 +9,21 @@ class Storage extends Storage_money {
 		this.white_list = new Set();
 	}
 
-	update_check(input_work_update, input_jobs_name_update) {
+	update_check(input_work_update) {
 		const local_work_update = Number(localStorage.getItem('work_update')) ?? 0;
 		if (local_work_update < input_work_update) {
 			localStorage.setItem('work_update', input_work_update);	
 			this.jobs_filter();
 		}
-
+	}
+	
+	update_check_jobs_names(input_jobs_name_update) {
 		const local_jobs_name_update = Number(localStorage.getItem('jobs_name_update')) ?? 0;
 		if (local_jobs_name_update < input_jobs_name_update) {
 			localStorage.setItem('jobs_name_update', input_jobs_name_update);	
 			this.jobs_property_reset();
 		}
 	}
-
 	wh_add(name) {
 		this.white_list.add(name);
 	}
@@ -46,6 +47,7 @@ class Storage extends Storage_money {
 
 	jobs_property_reset() {
 		for (let i = 0; i < this.my_jobs.length; ++i) {
+			console.log(this.my_jobs[i]);
 			this.my_jobs[i] = this.reset_list.get(this.my_jobs[i][0]);
 		}
 
