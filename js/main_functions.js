@@ -1,11 +1,12 @@
 function craft_add(craft_item, letf_item, right_item, craft_count, left_count, right_count, craft_img, left_img, right_img, price) {
 	Craft.craft_add(craft_item, letf_item, right_item, craft_img, left_img, right_img, craft_count, left_count, right_count);
-	Craft.salary_add(craft_item, price * 2);
+	Craft.salary_add(craft_item, price);
 }
 
 function shop_add(name, img, price) {
 	new Item_shop(name, img, price).show(storage);
 }
+
 function promo_add(name, price) {
 	Item_my.promo_add(name, price);
 }
@@ -46,4 +47,34 @@ function categories() {
 		cat_my.classList.add('categories_select');
 		cat_shop.classList.remove('categories_select');
 	});
+}
+
+const CTRL = {
+	shop_case: null,
+	storage: null,
+	create(name, img, price) {
+		this.shop_case = new Item_case(name, img, price);
+	},
+	add(name, img, price, chance = 1_000_000) {
+		chance = chance ?? 1_000_000;
+		this.shop_case.chance_add(name, img, price, chance);
+	},
+	show() { this.shop_case.show(this.storage);}
+}
+
+function random_chance_test(chance, max) {
+	let iteration = 0;
+	let number = 0;
+	
+	while(true) {
+		number = Math.floor(Math.random() * max);
+		if (number < chance) {break;}
+		++iteration;
+	}
+	
+	console.log(iteration);
+}
+
+function prcent_calculate(prcent, max) {
+	console.log(max / 100 * prcent);
 }

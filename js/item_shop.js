@@ -5,17 +5,23 @@ class Item_shop extends Item{
 
 	show(storage) {
 		let item = this.html_create_elem();
+		this.create_button(storage, item);
+		document.querySelector('.shop .items-container').appendChild(item);
+	}
 
+	create_button(storage, item) {
 		const button = document.createElement('button');
 		button.classList.add('item-buy');
 		button.classList.add('event_button');
 		button.innerText = 'buy';
 		item.appendChild(button);
+		this.button_listener(button, storage);
+	}
 
+	button_listener(button, storage) {
 		button.addEventListener('click', () => {
 			// have money
 			if (storage.money < this.price) {
-				console.log();
 				new Message('You dont have money', 'red');
 				return;
 			}
@@ -26,7 +32,5 @@ class Item_shop extends Item{
 			new Message(`You buy ${this.name}`, 'green');
 			Craft.craft_check(storage);
 		});
-
-		document.querySelector('.shop .items-container').appendChild(item);
 	}
 };

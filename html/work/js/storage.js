@@ -47,7 +47,6 @@ class Storage extends Storage_money {
 
 	jobs_property_reset() {
 		for (let i = 0; i < this.my_jobs.length; ++i) {
-			console.log(this.my_jobs[i]);
 			this.my_jobs[i] = this.reset_list.get(this.my_jobs[i][0]);
 		}
 

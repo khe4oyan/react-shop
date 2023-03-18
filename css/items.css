@@ -24,7 +24,7 @@ h2 {
 .item {
 	background-color: white;
 	overflow: hidden;
-	max-width: 120px;
+	/* max-width: 120px; */
 	display: grid;
 	position: relative;
 	grid-gap: 5px;
@@ -66,4 +66,8 @@ h2 {
 .item-sell {
 	transform: translateY(-10px);
 	background-color: rgb(232, 156, 156);
+}
+.item-case{
+	transform: translateY(-10px);
+	background-color: rgb(230, 156, 232);
 }

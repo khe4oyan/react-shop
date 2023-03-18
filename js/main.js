@@ -2,8 +2,8 @@ categories();
 for_new_players();
 
 // ==- PROMO's -===================
-promo_add('Gold', 9_900); 
-promo_add('NCoin', 10); 
+// name, price
+// promo_add();
 
 // ==- CRAFT'a add -====================
 craft_add('Gold Box', 'Box', 'Gold', 1, 1, 1, 'box_gold', 'box', 'gold_material', 10_100);
@@ -17,14 +17,39 @@ craft_add('#Phone(G)', 'Phone(C)', 'Gold', 1, 1, 1, 'phone_in_gold_case', 'phone
 // ==- GENERAL -====================
 let storage = new Storage();
 Craft.craft_check(storage);
+CTRL.storage = storage;
+Item_case.set_max_chance(1_000_000_000);
+
+// ==- SHOP CASE's -====================
+// CTRL.create('Junk', 'trash_case', 20); // ящик Димы
+// CTRL.add('Iron plates', 'iron_plates', 5, 150000000);
+// CTRL.add('Fish', 'fish', 4, null);
+// CTRL.add('Wheel', 'wheel', 50, null);
+// CTRL.add('Woodpile', 'woodpile', 150, null);
+// CTRL.show();
+// CTRL.add('Pillow (Class A)', 'pillow_a_class', 750, null);
+
+CTRL.create('Random item', 'shop_case', 5_000);
+CTRL.add('Flower', 'flower', 5, null);
+CTRL.add('Vase', 'vase', 7, null);
+CTRL.add('Box', 'box', 10, null);
+CTRL.add('Phone', 'phone', 50, null);
+CTRL.add('UFO', 'ufo', 999_999, 1_000);
+CTRL.add('Car', 'car', 2_000, 1_000_000);
+CTRL.add('Case(blue)', 'phone_case_blue', 20, null);
+CTRL.show();
+
+CTRL.create('Materials', 'shop_case', 8_000);
+CTRL.add('Gold', 'gold_material', 9_900, 500_000);
+CTRL.show();
+
+
 
 // ==- SHOP ITEM's -====================
-shop_add('Flower', 'flower', 5);
-shop_add('Vase', 'vase', 7);
-shop_add('Box', 'box', 10);
-shop_add('Case(blue)', 'phone_case_blue', 20);
-shop_add('Phone', 'phone', 50);
-shop_add('Car', 'car', 2_000);
-shop_add('UFO', 'ufo', 999_999);
-shop_add('Gold', 'gold_material', 10_000);
-shop_add('NCoin', 'ncoin', 10);
+// shop_add(name, img, price);
+// shop_add();
+
+
+// ==- TEST TOOL's -====================
+// random_chance_test(1_000_000, Item_case.max_chance);
+// prcent_calculate(15, Item_case.max_chance);

@@ -13,7 +13,7 @@ class Item_my extends Item{
 	}
 
 	static promo_price(name, price) {
-		return Item_my.promo.get(name) ?? Math.floor(price / 2);
+		return Item_my.promo.get(name) ?? price;
 	}
 	static promo_add(name, price) {
 		Item_my.promo.set(name, price);
