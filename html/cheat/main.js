@@ -18,6 +18,7 @@ function add() {
 		});
 	}
 }
+
 function remove() {
 	const elems = document.querySelectorAll('.remove');
 	

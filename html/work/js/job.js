@@ -44,15 +44,17 @@ class Job {
 		const name = Job.CE('p', ['job-name']);
 		const button = this.job_button_create_html();
 
-		name.innerText = this.name;
+		name.innerText = Lang.name_check(this.name); // translate
 
 		block.appendChild(name);
 		block.appendChild(button);
 		return block;
 	}
+
 	job_button_create_html() {
 		throw new Error('Override this method');
 	}
+
 	#job_title_img_html() {
 		const logo = new Image();
 		logo.classList.add('job-logo');
@@ -77,6 +79,7 @@ class Job {
 
 		return info;
 	}
+	
 	static CE(tag, classList = []) {
 		const elem = document.createElement(tag);
 		for (let i = 0; i < classList.length; ++i) {

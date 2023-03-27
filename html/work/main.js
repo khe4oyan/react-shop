@@ -1,3 +1,12 @@
+HeaderTitle.init(Lang.set('Shop | jobs', 'Магазин | работы'), Lang.set('back', 'назад'), '../../index.html');
+Creater.my(Lang.set('My jobs', 'Мои работы'));
+Creater.all(Lang.set('All jobs', 'Все работы'));
+
+// ===- TRANSLATE's -===
+Lang.add_name('Factory', 'Factory', 'Фабрика');
+Lang.add_name('Operator', 'Operator', 'Оператор');
+Lang.add_name('Programmer', 'Programmer', 'Программист');
+
 const storage = new Storage();
 Job.storage = storage;
 

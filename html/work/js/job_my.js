@@ -9,7 +9,7 @@ class My_Job extends Job{
 	job_button_create_html() {
 		const button = Job.CE('button', ['event_button', 'job-salary-work-button']);
 
-		button.innerText = 'work';
+		button.innerText = Lang.set('work', 'работать');
 		
 		button.addEventListener('click', () => {
 			if (Job.work_now) { return; } // work right now then return
@@ -30,7 +30,7 @@ class My_Job extends Job{
 				time_elem.innerText = this.time + 's';
 				time_elem.classList.toggle('in-work');
 				Job.storage.money_add(this.salary);
-				new Message(`You got ${this.salary}$`, 'green');
+				new Message(Lang.set(`You got ${this.salary}$`, `Заработано: ${this.salary}$`), 'green');
 				Job.work_now = false;
 			}, this.time * 1000 + 1000);
 		});
