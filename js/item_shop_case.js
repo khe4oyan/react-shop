@@ -1,11 +1,11 @@
 class Item_case extends Item_shop{
-	item_drop_chance;
 	static max_chance = 1_000_000;
+	item_drop_chance;
 
 	constructor(name, img, price) {
 		super(name, img, price);
 		this.item_drop_chance = new Map();
-		this.max_chance = 1_000_000;
+		this.max_chance = 1_000_000; // default value
 	}
 
 	static set_max_chance(num) {
@@ -13,7 +13,7 @@ class Item_case extends Item_shop{
 	}
 
 	button_listener(button, storage) {
-		button.innerText = 'open';
+		button.innerText = Lang.set('open', 'открыть');
 		button.classList.remove('item-but');
 		button.classList.add('item-case');
 
@@ -24,7 +24,7 @@ class Item_case extends Item_shop{
 
 	open(storage) {
 		if (storage.money < this.price) {
-			new Message('You dont have money', 'red');
+			new Message(Lang.set('You dont have money', 'Тебе не хватает денег'), 'red');
 			return;
 		}
 		// remove money
@@ -46,7 +46,7 @@ class Item_case extends Item_shop{
 			++ind;
 		}
 
-		new Message('Nothing fell out', 'info');
+		new Message(Lang.set('Nothing fell out', 'Ничего не выпало'), 'info');
 	}
 
 	chance_add(name, img, price, chance) {
@@ -71,6 +71,6 @@ class Item_case extends Item_shop{
 
 	drop_item(name, img, price) {
 		storage.item_add(name, img, price);
-		new Message(`Case dropped "${name}"!`, 'green');
+		new Message(Lang.set(`Case dropped "${Lang.name_check(name)}"!`, `Из кейса выпало: "${Lang.name_check(name)}"!`), 'green');
 	}
 };

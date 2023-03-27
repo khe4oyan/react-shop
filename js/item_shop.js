@@ -13,7 +13,7 @@ class Item_shop extends Item{
 		const button = document.createElement('button');
 		button.classList.add('item-buy');
 		button.classList.add('event_button');
-		button.innerText = 'buy';
+		button.innerText = Lang.set('buy', 'купить');
 		item.appendChild(button);
 		this.button_listener(button, storage);
 	}
@@ -22,14 +22,14 @@ class Item_shop extends Item{
 		button.addEventListener('click', () => {
 			// have money
 			if (storage.money < this.price) {
-				new Message('You dont have money', 'red');
+				new Message(Lang.set('You dont have money', 'Тебе не хватает денег'), 'red');
 				return;
 			}
 			// remove money
 			storage.money_take(this.price);
 			// add item in my items list
 			storage.item_add(this.name, this.img, this.price);
-			new Message(`You buy ${this.name}`, 'green');
+			new Message(Lang.set(`You buy ${Lang.name_check(this.name)}`, `Ты купил: ${Lang.name_check(this.name)}`), 'green'); 
 			Craft.craft_check(storage);
 		});
 	}

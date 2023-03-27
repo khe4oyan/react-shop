@@ -20,7 +20,7 @@ class Item {
 		img.classList.add('item-img');
 		price.classList.add('item-price');
 		
-		name.innerText = this.name;
+		name.innerText = Lang.name_check(this.name);
 		img.src = 'items/' + this.img + '.png';
 		price.innerText = this.price.toLocaleString();
 		

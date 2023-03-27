@@ -41,10 +41,10 @@ class Craft {
 		const crafted_button = document.createElement('button');
 		crafted_button.classList.add('crafted_button');
 		crafted_button.classList.add('event_button');
-		crafted_button.innerText = 'craft';
+		crafted_button.innerText = Lang.set('craft', 'скрафтить');
 
 		crafted_button.addEventListener('click', () => {
-			new Message(`You crafted ${name}`, 'craft');
+			new Message(Lang.set(`You crafted ${name}`, `Скрафчено: ${Lang.name_check(name)}`), 'craft');
 			for (let i = 0; i < count; ++i) { // give any time
 				if(name[0] == '#') { name = Craft.name_fix(name); }
 				Craft.storage.item_add(name, img, Craft.salary_get(name));
@@ -82,7 +82,7 @@ class Craft {
 		const card = this.create_card(img, count);
 		const crafted_name = document.createElement('p');
 		crafted_name.classList.add('crafted_name');
-		crafted_name.innerText = name;
+		crafted_name.innerText = Lang.name_check(name);
 
 		card.appendChild(crafted_name);
 		return card;

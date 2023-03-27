@@ -1,5 +1,35 @@
 categories();
 for_new_players();
+Lang.first_time();
+// ==- TRANSLATE's -====================
+Lang.add_name('Box', 'Box', 'Ящик');
+Lang.add_name('Bonus', 'Bonus', 'Бонус');
+Lang.add_name('Iron plates', 'Iron plates', 'Металлалом');
+Lang.add_name('Fish', 'Fish', 'Рыба');
+Lang.add_name('Wheel', 'Wheel', 'Покрышка');
+Lang.add_name('Woodpile', 'Woodpile', 'Охапка дров');
+Lang.add_name('Pillow (Class A)',);
+Lang.add_name('Flower', 'Flower', 'Цветок');
+Lang.add_name('Vase', 'Vase', 'Ваза');
+Lang.add_name('Box', 'Box', 'Коробка');
+Lang.add_name('Case(blue)', 'Phone case', 'Чехол');
+Lang.add_name('Phone', 'Phone', 'Телефон');
+Lang.add_name('Car', 'Car', 'Машина');
+Lang.add_name('Videocard', 'Videocard', 'Видеокарта');
+Lang.add_name('UFO', 'UFO', 'НЛО');
+Lang.add_name('Gold', 'Gold', 'Золото');
+Lang.add_name('RTX fragment', 'RTX fragment', 'Фрагмент RTX');
+Lang.add_name('RTX videocard', 'RTX videocard', 'RTX Видеокарта');
+Lang.add_name('Gold Box', 'Gold Box', 'Золотая коробка');
+Lang.add_name('Gold Car', 'Gold Car', 'Золотая машина');
+Lang.add_name('Collection 1', 'Collection', 'Цветок в вазе');
+Lang.add_name('Phone(C)', 'Phone(C)', 'Телефон в чехле');
+Lang.add_name('Case(G)', 'Gold case', 'Золотой чехол');
+Lang.add_name('Phone(G)', 'Gold phone', 'Золотой телефон');
+Lang.add_name('#Phone(G)', 'Gold phone', 'Золотой телефон');
+Lang.add_name('RTX gold box', 'RTX gold box', 'RTX Золотая коробка');
+Lang.add_name('RTX phone', 'RTX phone', 'RTX Золотой телефон');
+Lang.add_name('RTX fish', 'RTX fish', 'RTX Золотая рыба');
 
 // ==- PROMO's -===================
 // name, price
@@ -19,13 +49,15 @@ craft_add('RTX phone', 'Phone', 'RTX videocard', 1, 1, 1, 'rtx_phone', 'phone', 
 craft_add('RTX fish', 'Fish', 'RTX videocard', 1, 1, 1, 'rtx_fish', 'fish', 'rtx_videocard', 150_000);
 
 // ==- GENERAL -====================
+HeaderTitle.init(Lang.set('Shop', 'Магазин'), Lang.set('menu', 'меню'), 'html/menu/menu.html', Lang.set('work', 'работа'), 'html/work/work.html');
 let storage = new Storage();
 Craft.craft_check(storage);
 CTRL.storage = storage;
 Item_case.set_max_chance(1_000_000_000);
 
 // ==- SHOP CASE's -====================
-// CTRL.create('Junk', 'trash_case', 20); // ящик Димы
+// ящик Димы
+// CTRL.create(Lang.set('Junk', 'Хлам'), 'trash_case', 20); 
 // CTRL.add('Iron plates', 'iron_plates', 5, 150_000_000);
 // CTRL.add('Fish', 'fish', 4, null);
 // CTRL.add('Wheel', 'wheel', 50, null);
@@ -33,7 +65,7 @@ Item_case.set_max_chance(1_000_000_000);
 // CTRL.show();
 // CTRL.add('Pillow (Class A)', 'pillow_a_class', 750, null);
 
-CTRL.create('Random item', 'shop_case', 5_000);
+CTRL.create(Lang.set('Random item', 'Обычные'), 'shop_case', 5_000);
 CTRL.add('Flower', 'flower', 5, null);
 CTRL.add('Vase', 'vase', 7, null);
 CTRL.add('Box', 'box', 10, null);
@@ -44,7 +76,7 @@ CTRL.add('Videocard', 'videocard', 50_000, 10_000_000);
 CTRL.add('UFO', 'ufo', 999_999, 5_000_000);
 CTRL.show();
 
-CTRL.create('Materials', 'shop_case', 8_000);
+CTRL.create(Lang.set('Materials', 'Материалы'), 'shop_case', 8_000);
 CTRL.add('Gold', 'gold_material', 9_900, 300_000_000);
 CTRL.show();
 
@@ -55,7 +87,7 @@ CTRL.show();
 
 // ==- SHOP ITEM's -====================
 // shop_add(name, img, price);
-// shop_add();
+// shop_add('Box', 'box', 10);
 
 // ==- TEST TOOL's -====================
 random_chance_test(50_000_000, Item_case.max_chance);

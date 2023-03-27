@@ -30,7 +30,7 @@ class Item_my extends Item{
 		button.classList.add('item-sell');
 		
 		this.count_elem.innerText = this.count;
-		button.innerText = 'sell';
+		button.innerText = Lang.set('sell', 'продать');
 
 		item.appendChild(this.count_elem);
 		item.appendChild(button);
@@ -38,7 +38,7 @@ class Item_my extends Item{
 		button.addEventListener('click', () => {
 			this.take.bind(this);
 			this.take(storage, item);
-			new Message(`You sell ${this.name}`, 'red');
+			new Message(Lang.set(`You sell "${Lang.name_check(this.name)}"`, `"${Lang.name_check(this.name)}" продан`), 'red');
 		});
 
 		this.html_elem = item;
