@@ -55,14 +55,15 @@ const CTRL = {
 	create(name, img, price) {
 		this.shop_case = new Item_case(name, img, price);
 	},
-	add(name, img, price, chance = 1_000_000) {
-		chance = chance ?? 1_000_000;
+	add(name, img, price, chance = null) {
+		chance = chance ?? Item_case.max_chance;
 		this.shop_case.chance_add(name, img, price, chance);
 	},
 	show() { this.shop_case.show(this.storage);}
-}
+};
 
 function random_chance_test(chance, max) {
+	if (chance == 0) { return; }
 	let iteration = 0;
 	let number = 0;
 	
@@ -76,5 +77,5 @@ function random_chance_test(chance, max) {
 }
 
 function prcent_calculate(prcent, max) {
-	console.log(max / 100 * prcent);
+	console.log((max / 100 * prcent).toLocaleString());
 }

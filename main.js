@@ -26,7 +26,7 @@ Item_case.set_max_chance(1_000_000_000);
 
 // ==- SHOP CASE's -====================
 // CTRL.create('Junk', 'trash_case', 20); // ящик Димы
-// CTRL.add('Iron plates', 'iron_plates', 5, 150000000);
+// CTRL.add('Iron plates', 'iron_plates', 5, 150_000_000);
 // CTRL.add('Fish', 'fish', 4, null);
 // CTRL.add('Wheel', 'wheel', 50, null);
 // CTRL.add('Woodpile', 'woodpile', 150, null);
@@ -37,28 +37,26 @@ CTRL.create('Random item', 'shop_case', 5_000);
 CTRL.add('Flower', 'flower', 5, null);
 CTRL.add('Vase', 'vase', 7, null);
 CTRL.add('Box', 'box', 10, null);
-CTRL.add('Phone', 'phone', 50, null);
 CTRL.add('Case(blue)', 'phone_case_blue', 20, null);
-CTRL.add('UFO', 'ufo', 999_999, 1_000);
-CTRL.add('Videocard', 'videocard', 50_000, 500_000);
-CTRL.add('Car', 'car', 2_000, 1_000_000);
+CTRL.add('Phone', 'phone', 50, null);
+CTRL.add('Car', 'car', 2_000, 500_000_000);
+CTRL.add('Videocard', 'videocard', 50_000, 10_000_000);
+CTRL.add('UFO', 'ufo', 999_999, 5_000_000);
 CTRL.show();
 
 CTRL.create('Materials', 'shop_case', 8_000);
-CTRL.add('Gold', 'gold_material', 9_900, 500_000);
+CTRL.add('Gold', 'gold_material', 9_900, 300_000_000);
 CTRL.show();
 
 CTRL.create('RTX', 'rtx_shop_case', 10_000);
-CTRL.add('Box', 'box', 10, null);
-CTRL.add('RTX fragment', 'rtx_fragment', 20_000, 100_000);
-CTRL.add('RTX videocard', 'rtx_fragment', 200_000, 5_000);
+CTRL.add('RTX fragment', 'rtx_fragment', 20_000, 250_000_000);
+CTRL.add('RTX videocard', 'rtx_videocard', 200_000, 50_000_000);
 CTRL.show();
-
 
 // ==- SHOP ITEM's -====================
 // shop_add(name, img, price);
 // shop_add();
 
 // ==- TEST TOOL's -====================
-random_chance_test(500_000, Item_case.max_chance);
-prcent_calculate(.005, Item_case.max_chance);
+random_chance_test(50_000_000, Item_case.max_chance);
+prcent_calculate(1, Item_case.max_chance);

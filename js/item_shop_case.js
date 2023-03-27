@@ -9,7 +9,7 @@ class Item_case extends Item_shop{
 	}
 
 	static set_max_chance(num) {
-		this.max_chance = num;
+		Item_case.max_chance = num;
 	}
 
 	button_listener(button, storage) {
@@ -31,9 +31,10 @@ class Item_case extends Item_shop{
 		storage.money_take(this.price);
 		
 		// chance check
-		const chance = 1 + Math.floor(Math.random() * this.max_chance);
+		const chance = 1 + Math.floor(Math.random() * Item_case.max_chance);
 
-		
+		console.log(`Chance: ${chance}`);
+
 		const keys = [...this.item_drop_chance.keys()];
 		let ind = 0;
 		while(ind < keys.length) {
