@@ -1,7 +1,7 @@
 categories();
 for_new_players();
 Lang.first_time();
-// ==- TRANSLATE's -====================
+// ==- TRANSLATE's -===================
 Lang.add_name('Box', 'Box', 'Ящик');
 Lang.add_name('Bonus', 'Bonus', 'Бонус');
 Lang.add_name('Iron plates', 'Iron plates', 'Металлалом');
@@ -82,6 +82,7 @@ CTRL.show();
 
 CTRL.create('RTX', 'rtx_shop_case', 10_000);
 CTRL.add('RTX fragment', 'rtx_fragment', 20_000, 250_000_000);
+CTRL.add('Videocard', 'videocard', 50_000, 80_000_000);
 CTRL.add('RTX videocard', 'rtx_videocard', 200_000, 50_000_000);
 CTRL.show();
 
