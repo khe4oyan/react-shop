@@ -27,9 +27,7 @@ export default function Crafts({tools}) {
 						tools.items.remItem(secondItem[0]);
 					}
 
-					for (let i = 0; i < craftedCount; ++i) {
-						tools.items.addItem(itemId);
-					}
+					tools.items.addItem(itemId);
 				}
 				
 				const craft = {

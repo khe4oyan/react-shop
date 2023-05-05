@@ -6,12 +6,12 @@ export default function ItemMy({item, tools}) {
 	const count = item[1];
 
 	const sellButton = () => {
+		console.log();
 		const itemId = item[0];
 		const itemPrice = allObjects.items.get(itemId).priceWhenSell;
 		const hasItem = tools.items.hasItem(itemId);
-		const hasMoney = tools.money.hasMoney(itemPrice);
 
-		if (hasItem && hasMoney) {
+		if (hasItem) {
 			tools.items.remItem(itemId);
 			tools.money.addMoney(itemPrice);
 		}
