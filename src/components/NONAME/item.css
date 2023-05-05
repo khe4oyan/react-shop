@@ -1,0 +1,60 @@
+
+.item {
+	background-color: white;
+	overflow: hidden;
+	/* max-width: 120px; */
+	/* display: grid; */
+	justify-content: flex-start;
+	align-items: flex-start;
+	position: relative;
+	grid-gap: 5px;
+	padding: 10px;
+	border: 2px solid black;
+	margin: 4px;
+	text-align: center;
+	border-radius: 5px;
+	max-height: 212px;
+}
+.item > * {
+	width: 100%;
+}
+.item-count{
+	color: gray;
+	position: absolute;
+	right: 2px;
+	width: initial;
+	top: -8px; 
+}
+.item-name {
+	font-weight: bold;
+	border-radius: 0;
+}
+.item-img {
+	width: 100px;
+	margin: auto;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+.item-cant-sell {
+	color: gray;
+}
+.item-price {
+	transform: translateY(-7px);
+	color: rgb(13, 78, 13);
+}
+.item-price::before {
+	content: '$';
+}
+.item-buy{
+	transform: translateY(-10px);
+	text-align: center;
+	background-color: rgb(155, 222, 155);
+}
+.item-sell {
+	transform: translateY(-10px);
+	background-color: rgb(232, 156, 156);
+}
+.item-case{
+	transform: translateY(-10px);
+	background-color: rgb(230, 156, 232);
+}
