@@ -1,9 +1,10 @@
 import './crafts.css'
 import Craft from '../crafts_craft/Craft';
 import allObjects from '../../data/data';
+import { useState } from 'react';
 
 export default function Crafts({tools}) {
-	const allItemsList = allObjects.items;
+	const [allItemsList ] = useState(allObjects.items);
 
 	const craftsList = [];
 	allItemsList.forEach(function(craftData, itemId) {
@@ -22,11 +23,12 @@ export default function Crafts({tools}) {
 					for (let i = 0; i < firstItem[1]; ++i) {
 						tools.items.remItem(firstItem[0]);
 					}
-
+					
 					for (let i = 0; i < secondItem[1]; ++i) {
 						tools.items.remItem(secondItem[0]);
 					}
-
+					
+					// add items in count
 					tools.items.addItem(itemId);
 				}
 				

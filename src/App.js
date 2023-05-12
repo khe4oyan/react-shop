@@ -31,8 +31,11 @@ export default function App() {
       ));
     } else {
       // if have item
+      console.log('== c1');
+      const newVal = myItems[findIndex][1] + 1;
       setMyItems(prev => {
-        ++prev[findIndex][1];
+        console.log('== c2', prev[findIndex][1]);
+        prev[findIndex][1] = newVal;
         return [...prev];
       });
     }
