@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/shop/static/css/main.fd40b574.css",
-    "main.js": "/shop/static/js/main.85454c81.js",
+    "main.js": "/shop/static/js/main.ac945637.js",
     "static/media/vag-world-bold.ttf": "/shop/static/media/vag-world-bold.3484d1f385e1ed2faa12.ttf",
     "index.html": "/shop/index.html",
     "main.fd40b574.css.map": "/shop/static/css/main.fd40b574.css.map",
-    "main.85454c81.js.map": "/shop/static/js/main.85454c81.js.map"
+    "main.ac945637.js.map": "/shop/static/js/main.ac945637.js.map"
   },
   "entrypoints": [
     "static/css/main.fd40b574.css",
-    "static/js/main.85454c81.js"
+    "static/js/main.ac945637.js"
   ]
 }
