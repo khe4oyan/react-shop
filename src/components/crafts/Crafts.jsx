@@ -16,9 +16,6 @@ export default function Crafts({tools}) {
 			const hasSecondItem = tools.items.hasItem(secondItem[0], secondItem[1]);
 
 			if (hasFirstItem && hasSecondItem) {
-				const craftedImg = craftData.img;
-				const craftedCount = craftData.craft[0];
-
 				const craftButton = () => {
 					for (let i = 0; i < firstItem[1]; ++i) {
 						tools.items.remItem(firstItem[0]);
@@ -28,9 +25,11 @@ export default function Crafts({tools}) {
 						tools.items.remItem(secondItem[0]);
 					}
 					
-					// add items in count
-					tools.items.addItem(itemId);
+					tools.items.addItem(itemId, craftData.craft[0]);
 				}
+
+				const craftedImg = craftData.img;
+				const craftedCount = craftData.craft[0];
 				
 				const craft = {
 					craftedImg,

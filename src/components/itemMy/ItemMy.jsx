@@ -20,7 +20,7 @@ export default function ItemMy({item, tools}) {
 	// add click
 	return (
 		<div className='item'>
-			<p className='item-count'>{count}</p>
+			<p className='item-count'>x{count}</p>
 			<p className='item-name'>{itemData.name}</p>
 			<img className='item-img' src={`https://raw.githubusercontent.com/khe4oyan/shop/gh-pages/items/${itemData.img}.png`} alt='item-img'/>
 			{

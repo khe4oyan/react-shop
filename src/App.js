@@ -22,19 +22,17 @@ export default function App() {
   const remMoney = (count) => { setMoney(prev => prev -= count ); }
   const hasMoney = (count) => { if (money < count) return false; else return true; }
 
-  const addItem = (itemId) => {
+  const addItem = (itemId, count = 1) => {
     const findIndex = myItems.findIndex((item) => {return item[0] == itemId});
     if (findIndex == -1) {
       // if new item
       setMyItems(prev => (
-        [...prev, [itemId, 1]]
+        [...prev, [itemId, count]]
       ));
     } else {
       // if have item
-      console.log('== c1');
-      const newVal = myItems[findIndex][1] + 1;
+      const newVal = myItems[findIndex][1] + count;
       setMyItems(prev => {
-        console.log('== c2', prev[findIndex][1]);
         prev[findIndex][1] = newVal;
         return [...prev];
       });
@@ -113,6 +111,6 @@ function firstVisit() {
     localStorage.clear();
     localStorage.setItem('upd', 0); // future maybe used(now not used)
     localStorage.setItem('money', 20_000);
-    localStorage.setItem('myItems', JSON.stringify([]));
+    localStorage.setItem('myItems', JSON.stringify([[5, 2]]));
   }
 }
