@@ -25,20 +25,19 @@ const allObjects = {
 	]),
 
 	cases: new Map([
-		[ 0, { name: 'Default', price: 100, img: 'shop_case', innerItems: [
+		[ 0, { name: 'Default', price: 10, img: 'shop_case', innerItems: [
 			[0, 99],
 			[1, 50],
-			[3, 50],
 		]}],
-		[ 1, { name: 'Materials', price: 10_000, img: 'shop_case', innerItems: [
+		[ 1, { name: 'Materials', price: 1_000, img: 'shop_case', innerItems: [
 			[2, 50],
 		]}],
-		[ 2, { name: 'RTX', price: 20_000, img: 'rtx_shop_case', innerItems: [
+		[ 2, { name: 'RTX', price: 2_000, img: 'rtx_shop_case', innerItems: [
 			[15, 99],
 			[17, 5],
 			[16, 1],
 		]}],
-		[ 3, { name: 'Trash Case', price: 1_000, img: 'trash_case', innerItems: [
+		[ 3, { name: 'Trash Case', price: 100, img: 'trash_case', innerItems: [
 			[6, 99],
 			[11, 80],
 			[13, 80],
