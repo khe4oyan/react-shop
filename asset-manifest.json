@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "./https://khe4oyan.github.io/shop/static/css/main.f3088878.css",
-    "main.js": "./https://khe4oyan.github.io/shop/static/js/main.f50daf64.js",
-    "static/media/vag-world-bold.ttf": "./https://khe4oyan.github.io/shop/static/media/vag-world-bold.3484d1f385e1ed2faa12.ttf",
-    "index.html": "./https://khe4oyan.github.io/shop/index.html",
-    "main.f3088878.css.map": "./https://khe4oyan.github.io/shop/static/css/main.f3088878.css.map",
-    "main.f50daf64.js.map": "./https://khe4oyan.github.io/shop/static/js/main.f50daf64.js.map"
+    "main.css": "./https://khe4oyan.github.io/react-shop/static/css/main.f3088878.css",
+    "main.js": "./https://khe4oyan.github.io/react-shop/static/js/main.f50daf64.js",
+    "static/media/vag-world-bold.ttf": "./https://khe4oyan.github.io/react-shop/static/media/vag-world-bold.3484d1f385e1ed2faa12.ttf",
+    "index.html": "./https://khe4oyan.github.io/react-shop/index.html",
+    "main.f3088878.css.map": "./https://khe4oyan.github.io/react-shop/static/css/main.f3088878.css.map",
+    "main.f50daf64.js.map": "./https://khe4oyan.github.io/react-shop/static/js/main.f50daf64.js.map"
   },
   "entrypoints": [
     "static/css/main.f3088878.css",
