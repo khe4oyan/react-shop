@@ -13,7 +13,8 @@ export default function Crafts({tools}) {
 }
 
 function craftsListCreate(allItemsList, tools) {
-	const craftsList = [];
+	const canCraft = [];
+	const cantCraft = [];
 	allItemsList.forEach(function(craftData, itemId) {
 		if (craftData.craft != null ) { 
 			const firstItem = craftData.craft[1];
@@ -22,6 +23,16 @@ function craftsListCreate(allItemsList, tools) {
 			const hasFirstItem = tools.items.hasItem(firstItem[0], firstItem[1]);
 			const hasSecondItem = tools.items.hasItem(secondItem[0], secondItem[1]);
 
+			const craftedImg = craftData.img;
+			const craftedCount = craftData.craft[0];
+				
+			let craft = {
+				craftedImg,
+				craftedCount,
+				firstItem,
+				secondItem,
+			};
+
 			if (hasFirstItem && hasSecondItem) {
 				const craftButton = () => {
 					tools.items.addItem(itemId, craftData.craft[0]);
@@ -29,21 +40,14 @@ function craftsListCreate(allItemsList, tools) {
 					tools.items.remItem(secondItem[0], secondItem[1]);
 				}
 
-				const craftedImg = craftData.img;
-				const craftedCount = craftData.craft[0];
-				
-				const craft = {
-					craftedImg,
-					craftedCount,
-					firstItem,
-					secondItem,
-					craftButton,
-				};
+				craft.craftButton = craftButton;
 
-				craftsList.push(<Craft key={`unique-craft-key-${itemId}`} craft={craft}/>);
+				canCraft.push(<Craft key={`unique-craft-key-${itemId}`} craft={craft}/>);
+			} else {
+				cantCraft.push(<Craft key={`unique-craft-key-${itemId}`} craft={craft} cantCraft={true}/>);
 			}
 		}
 	});
 
-	return craftsList;
+	return [...canCraft, ...cantCraft];
 }

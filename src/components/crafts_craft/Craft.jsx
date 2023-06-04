@@ -1,9 +1,9 @@
 import './craft.css'
 import allObjects from '../../data/data';
 
-export default function Craft({craft}) {
+export default function Craft({craft, cantCraft = false}) {
 	return (
-		<div className='craft'>
+		<div className={`craft ${cantCraft && 'craft-disabled'}`}>
 			<div className='card'>
 				<h2 className='crafted_count'>x{craft.craftedCount}</h2>
 				<img className='crafted_img' src={`https://raw.githubusercontent.com/khe4oyan/shop/gh-pages/items/${craft.craftedImg}.png`} alt='crafted-img'/>

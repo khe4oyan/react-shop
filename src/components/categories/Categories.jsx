@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function Categories({tools}) {
 	const [categoryToggle, setCategoryToggle] = useState('shop');
+	
 	return (
 		<div className="categories">
 			<div className="categories__header">
