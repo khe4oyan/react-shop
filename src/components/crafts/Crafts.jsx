@@ -1,11 +1,18 @@
 import './crafts.css'
 import Craft from '../crafts_craft/Craft';
 import allObjects from '../../data/data';
-import { useState } from 'react';
 
 export default function Crafts({tools}) {
-	const [allItemsList ] = useState(allObjects.items);
+	const craftsList = craftsListCreate(allObjects.items, tools);
+	
+	return (
+		<div className="crafts">
+			{craftsList}
+		</div>
+	);
+}
 
+function craftsListCreate(allItemsList, tools) {
 	const craftsList = [];
 	allItemsList.forEach(function(craftData, itemId) {
 		if (craftData.craft != null ) { 
@@ -17,15 +24,9 @@ export default function Crafts({tools}) {
 
 			if (hasFirstItem && hasSecondItem) {
 				const craftButton = () => {
-					for (let i = 0; i < firstItem[1]; ++i) {
-						tools.items.remItem(firstItem[0]);
-					}
-					
-					for (let i = 0; i < secondItem[1]; ++i) {
-						tools.items.remItem(secondItem[0]);
-					}
-					
 					tools.items.addItem(itemId, craftData.craft[0]);
+					tools.items.remItem(firstItem[0], firstItem[1]);
+					tools.items.remItem(secondItem[0], secondItem[1]);
 				}
 
 				const craftedImg = craftData.img;
@@ -43,10 +44,6 @@ export default function Crafts({tools}) {
 			}
 		}
 	});
-	
-	return (
-		<div className="crafts">
-			{craftsList}
-		</div>
-	);
+
+	return craftsList;
 }

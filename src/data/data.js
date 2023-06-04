@@ -15,7 +15,7 @@ const allObjects = {
 		[ 10, { name: 'Hat', 						priceWhenBuy: 50, 		priceWhenSell: 45, 			img: 'hat', 						craft: null}],
 		[ 11, { name: 'Iron Plates', 		priceWhenBuy: 0, 			priceWhenSell: 100, 		img: 'iron_plates', 		craft: null}],
 		[ 12, { name: 'Ncoin', 					priceWhenBuy: 1, 			priceWhenSell: 1, 			img: 'ncoin', 					craft: null}],
-		[ 13, { name: 'Pillow(A', 			priceWhenBuy: 0, 			priceWhenSell: 10, 			img: 'pillow_a_class', 	craft: null}],
+		[ 13, { name: 'Pillow(A)', 			priceWhenBuy: 0, 			priceWhenSell: 10, 			img: 'pillow_a_class', 	craft: null}],
 		[ 14, { name: 'Fish(RTX)', 			priceWhenBuy: 0, 			priceWhenSell: 15, 			img: 'rtx_fish', 				craft: null}],
 		[ 15, { name: 'Fragment(RTX)', 	priceWhenBuy: 0, 			priceWhenSell: 1_000, 	img: 'rtx_fragment', 		craft: null}],
 		[ 16, { name: 'Videocard(RTX)', priceWhenBuy: 0, 			priceWhenSell: 50_000, 	img: 'rtx_videocard', 	craft: null}],

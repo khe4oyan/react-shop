@@ -3,10 +3,9 @@ import allObjects from '../../data/data';
 
 export default function ItemMy({item, tools}) {
 	const itemData = allObjects.items.get(item[0]);
-	const count = item[1];
 
+	const count = item[1];
 	const sellButton = () => {
-		console.log();
 		const itemId = item[0];
 		const itemPrice = allObjects.items.get(itemId).priceWhenSell;
 		const hasItem = tools.items.hasItem(itemId);

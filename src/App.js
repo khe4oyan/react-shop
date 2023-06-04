@@ -1,4 +1,5 @@
 import './App.css'
+import { firstVisit, toolsCreate } from './tools/tools';
 
 import React, { useEffect, useState } from 'react';
 import Header from './components/header/Header'
@@ -20,83 +21,10 @@ export default function App() {
 
   const addMoney = (count) => { setMoney(prev => prev += count); }
   const remMoney = (count) => { setMoney(prev => prev -= count ); }
-  const hasMoney = (count) => { if (money < count) return false; else return true; }
+  const hasMoney = (count) => { return (money < count) ? false : true; }
 
-  const addItem = (itemId, count = 1) => {
-    const findIndex = myItems.findIndex((item) => {return item[0] == itemId});
-    if (findIndex == -1) {
-      // if new item
-      setMyItems(prev => (
-        [...prev, [itemId, count]]
-      ));
-    } else {
-      // if have item
-      const newVal = myItems[findIndex][1] + count;
-      setMyItems(prev => {
-        prev[findIndex][1] = newVal;
-        return [...prev];
-      });
-    }
-  }
+  const tools = toolsCreate(myItems, setMyItems, addMoney, remMoney, hasMoney);
 
-  const remItem = (itemId) => {
-    const findIndex = myItems.findIndex((item) => {return item[0] == itemId});
-
-    // if count > 1
-    if (myItems[findIndex][1] > 1) {
-      setMyItems(prev => {
-        const newItems = prev.map((item, index) => {
-          if (index == findIndex) {
-            return [item[0], item[1] - 1];
-          }
-          return item;
-        })
-        return newItems;
-      });
-    } else {
-      // if count == 1
-      setMyItems(prev => {
-        return prev.filter((_, index) => {
-          return index != findIndex;
-        });
-      });
-    }
-  }
-
-  const hasItem = (itemId, itemCount = 1) => {
-    const findIndex = myItems.findIndex((item) => {return item[0] == itemId});
-    if (findIndex == -1) {
-      // if not have
-      return false;
-    } else {
-      // if have
-      if (myItems[findIndex][1] < itemCount) {
-        return false;
-      } else {
-        return true;
-      }
-    }
-  }
-
-  const allItems = () => { 
-    return myItems; 
-  }
-
-  const tools = {
-    items: {
-      addItem,
-      remItem,
-      hasItem,
-      allItems
-    },
-    
-    money: {
-      addMoney,
-      remMoney,
-      hasMoney,
-    }
-  };
-  
   return (
     <div className='App'>
       <Header money={money}/>
@@ -104,13 +32,4 @@ export default function App() {
       <Crafts tools={tools}/>
     </div>
   );
-}
-
-function firstVisit() {
-  if (localStorage.getItem('upd') == undefined) {
-    localStorage.clear();
-    localStorage.setItem('upd', 0); // future maybe used(now not used)
-    localStorage.setItem('money', 20_000);
-    localStorage.setItem('myItems', JSON.stringify([[5, 2]]));
-  }
 }

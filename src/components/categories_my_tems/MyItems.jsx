@@ -6,9 +6,12 @@ export default function MyItems({tools}) {
   return (
     <div className="my-items">
       <div className="items-container">
-        {itemList.length > 0 ? itemList.map((item, index) => {
-          return <ItemMy key={`my-items-my${index}`} item={item} tools={tools}/>
-        }) : <p>no items</p>}
+        {
+          itemList.length > 0 ? itemList.map((item, index) => {
+            return <ItemMy key={`my-items-my${index}`} item={item} tools={tools}/>
+          }) : 
+          <p>no items</p>
+        }
       </div>
     </div>
   );

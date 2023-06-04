@@ -2,7 +2,6 @@ import './craft.css'
 import allObjects from '../../data/data';
 
 export default function Craft({craft}) {
-	
 	return (
 		<div className='craft'>
 			<div className='card'>
