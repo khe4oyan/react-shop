@@ -1,25 +1,35 @@
 import '../NONAME/item.css'
+import { useState } from 'react';
+import { randomGetItemIndex, createCaseInnerList } from './tools'
 import allObjects from '../../data/data';
 import InnerCase from '../innerCase/InnerCase';
-import { useState } from 'react';
+import OpenedItem from '../itemShopOpenedItem/OpenedItem'
 
 export default function ItemShop({ind, tools}) {
 	const itemData = allObjects.cases.get(ind);
-	
+
+	let [showInnerModal, setShowInnerModal] = useState(false);
+	let [showOpenedItem, setShowOpenedItem] = useState(false);
+
+	let itemList = null;
+	let [givenItemIndex, setGivenItemIndex] = useState(null);
+
+
 	const openButton = () => {
 		const casePrice = itemData.price;
 		const haveMoney = tools.money.hasMoney(casePrice);
 		if (!haveMoney) { return; }
 		
-		tools.money.remMoney(casePrice);
+		itemList = createCaseInnerList(itemData); 
+		givenItemIndex = setGivenItemIndex(randomGetItemIndex(itemList));
 		
-		const itemList = createCaseInnerList(itemData); 
-		const givenItemIndex = randomGetItemIndex(itemList);
-		if (givenItemIndex == -1) { return; }
-		tools.items.addItem(givenItemIndex);
+		if (givenItemIndex == -1 ) { return; }
+		if (Number.isInteger(givenItemIndex)) {
+			tools.money.remMoney(casePrice);
+			tools.items.addItem(givenItemIndex);
+		}
+		setShowOpenedItem(true);
 	}
-
-	let [showModal, setShowModal] = useState(false);
 
 	return (
 		<>
@@ -29,49 +39,17 @@ export default function ItemShop({ind, tools}) {
 				<p className='item-price'>{itemData.price}</p>
 				<button onClick={openButton} className='item-buy event_button item-case'>open</button>
 				<div className='item-info'>
-					<p className='item-info__i' onClick={() => setShowModal(true)}>i</p>
+					<p className='item-info__i' onClick={() => setShowInnerModal(true)}>i</p>
 				</div>
 			</div>
 			{
-				showModal &&
-				<InnerCase setShowModal={setShowModal} caseId={ind}/>
-			}	
+				showInnerModal &&
+				<InnerCase closeModal={() => { setShowInnerModal(false) }} caseId={ ind }/>
+			}
+			{
+				showOpenedItem &&
+				<OpenedItem closeModal={() => { setShowOpenedItem(false)}} itemId={ givenItemIndex }/>
+			}
 		</>
 	);
-}
-
-function randomGetItemIndex(itemList) {
-	const keys = [...itemList.keys()].sort();
-	const chance = 1 + Math.floor(Math.random() * 101);
-	
-	for (let i = 0; i < keys.length; ++i) {
-		const itemDropChance = keys[i];
-		if (chance < itemDropChance) {
-			return dropingItem(itemList.get(itemDropChance));
-		}
-	}
-	return -1;
-}
-
-function dropingItem(idList) {
-	if (idList.length == 1) { return idList[0]; }
-	const index = Math.floor(Math.random() * idList.length);
-	return idList[index];	
-}
-
-function createCaseInnerList (itemData) {
-	const itemList = new Map();
-	const innerItems = itemData.innerItems;
-	for (let i = 0; i < innerItems.length; ++i) {
-		const itemId = innerItems[i][0];
-		const itemChance = innerItems[i][1];
-		
-		if (itemList.get(itemChance) == undefined) {
-			itemList.set(itemChance, [itemId]);
-		} else {
-			itemList.get(itemChance).push(itemId);
-		}
-	}
-
-	return itemList;
 }

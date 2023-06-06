@@ -1,0 +1,35 @@
+.modalBox__container {
+	width: 80%;
+	position: relative;
+	padding: 10px;
+	background: white;
+}
+.modalBox__itemImg {
+	width: 100px;
+	border: 7px solid rgb(231, 231, 231);
+}
+.modalBox__container__itemInfo{
+	margin: auto;
+	display: flex;
+}
+.modalBox__container__itemInfo__box{
+	margin-left: 10px;
+}
+.modalBox__container__itemInfo__name {
+	font-size: 1.7rem;
+}
+.modalBox__container__itemInfo__price {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: rgb(18, 51, 18);
+}
+
+.modalBox__container__nothing{
+	border: 5px solid gray;
+	background-color: rgba(0, 0, 0, .3);
+}
+.modalBox__container__nothing__headerText{
+	color: rgb(59, 59, 59);
+	text-align: center;
+}

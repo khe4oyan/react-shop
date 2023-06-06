@@ -1,13 +1,12 @@
 import './innerCase.css';
 import allObjects from '../../data/data';
 
-export default function InnerCase({setShowModal, caseId}) {
+export default function InnerCase({closeModal, caseId}) {
 	const list = new Map();
 	const items = allObjects.items.forEach((item, ind) => {
 		list.set(ind, item.img);
 	});
 	
-
 	const innerCase = allObjects.cases.get(caseId).innerItems;
 	const domElem = [];
 
@@ -15,17 +14,17 @@ export default function InnerCase({setShowModal, caseId}) {
 		domElem.push(
 			<div key={`key-${i}`} className='inner-case__box__item'>
 				<img 	className='inner-case__box__item__img' 
-							src={`https://raw.githubusercontent.com/khe4oyan/shop/gh-pages/items/${list.get(innerCase[i][0])}.png`} 
-							alt="item img" />
+					src={`https://raw.githubusercontent.com/khe4oyan/shop/gh-pages/items/${list.get(innerCase[i][0])}.png`} 
+					alt="item img" />
 			</div>
 		);
 	}
 
 	return(
-		<div className="inner-case center">
+		<div className="inner-case modalBox center">
 			<div className='inner-case__box'>
 				{domElem}
-				<button onClick={()=> setShowModal(false)} className='inner-case__close-btn center'>x</button>
+				<button onClick={closeModal} className='modalBox__close center'>x</button>
 			</div>
 		</div>
 	);

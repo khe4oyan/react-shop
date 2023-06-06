@@ -2,3 +2,19 @@
 	min-height: 202px;
 	padding: 10px;
 }
+/* .crafts__controlBlock {} */
+.crafts__controlBlock__buttonBox{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 3px;
+}
+.crafts__controlBlock__button {
+	width: 80px;
+	padding: 10px;
+}
+.crafts__controlBlock__buttonActive{
+	background-color: rgb(5, 223, 59);
+}
+
+/* .crafts__controlBlock__buttonPrev {} */
+/* .crafts__controlBlock__buttonNext {} */
