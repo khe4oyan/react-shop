@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.85b19cd1.css",
-    "main.js": "./static/js/main.57eb75fc.js",
+    "main.css": "./static/css/main.81b39e6b.css",
+    "main.js": "./static/js/main.8081e150.js",
     "static/media/vag-world-bold.ttf": "./static/media/vag-world-bold.3484d1f385e1ed2faa12.ttf",
     "index.html": "./index.html",
-    "main.85b19cd1.css.map": "./static/css/main.85b19cd1.css.map",
-    "main.57eb75fc.js.map": "./static/js/main.57eb75fc.js.map"
+    "main.81b39e6b.css.map": "./static/css/main.81b39e6b.css.map",
+    "main.8081e150.js.map": "./static/js/main.8081e150.js.map"
   },
   "entrypoints": [
-    "static/css/main.85b19cd1.css",
-    "static/js/main.57eb75fc.js"
+    "static/css/main.81b39e6b.css",
+    "static/js/main.8081e150.js"
   ]
 }
