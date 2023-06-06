@@ -14,20 +14,21 @@ export default function ItemShop({ind, tools}) {
 	let itemList = null;
 	let [givenItemIndex, setGivenItemIndex] = useState(null);
 
-
 	const openButton = () => {
 		const casePrice = itemData.price;
 		const haveMoney = tools.money.hasMoney(casePrice);
 		if (!haveMoney) { return; }
 		
 		itemList = createCaseInnerList(itemData); 
-		givenItemIndex = setGivenItemIndex(randomGetItemIndex(itemList));
-		
-		if (givenItemIndex == -1 ) { return; }
-		if (Number.isInteger(givenItemIndex)) {
+		givenItemIndex = setGivenItemIndex(() => {
+			let newVal = randomGetItemIndex(itemList);
+			if (newVal == null ) { return; }
+
 			tools.money.remMoney(casePrice);
-			tools.items.addItem(givenItemIndex);
-		}
+			tools.items.addItem(newVal);
+
+			return newVal;
+		});
 		setShowOpenedItem(true);
 	}
 

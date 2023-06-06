@@ -27,7 +27,7 @@ const allObjects = {
 	cases: new Map([
 		[ 0, { name: 'RTX', price: 2_000, img: 'rtx_shop_case', innerItems: [
 			[16, 1],
-			[17, 5],
+			[17, 20],
 			[15, 99],
 		]}],
 		[ 1, { name: 'Materials', price: 1_000, img: 'shop_case', innerItems: [

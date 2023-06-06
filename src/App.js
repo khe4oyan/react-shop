@@ -3,8 +3,8 @@ import { firstVisit, toolsCreate } from './tools/tools';
 
 import React, { useEffect, useState } from 'react';
 import Header from './components/header/Header'
-import Crafts from './components/crafts/Crafts'
 import Categories from './components/categories/Categories';
+import Crafts from './components/crafts/Crafts'
 
 firstVisit();
 

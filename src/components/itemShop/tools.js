@@ -1,15 +1,17 @@
 export
 function randomGetItemIndex(itemList) {
 	const keys = [...itemList.keys()].sort();
-	const chance = 1 + Math.floor(Math.random() * 101);
-	
+	const chance = Math.random() * 101;
+
 	for (let i = 0; i < keys.length; ++i) {
 		const itemDropChance = keys[i];
 		if (chance < itemDropChance) {
-			return dropingItem(itemList.get(itemDropChance));
+			const res = dropingItem(itemList.get(itemDropChance));
+			return res
 		}
 	}
-	return -1;
+
+	return null;
 }
 
 export

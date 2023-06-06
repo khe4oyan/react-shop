@@ -10,7 +10,7 @@ export default function OpenedItem({ closeModal, itemId }) {
 			<div className="modalBox__container">
 				<div className="modalBox__close center" onClick={ closeModal }>x</div>
 				{
-					itemId != -1 &&
+					itemId != null &&
 					<div className='modalBox__container__itemInfo'>
 						<img className='modalBox__itemImg' src={`./items/${itemData.img}.png`} alt="droped item img" />
 						<div className='modalBox__container__itemInfo__box'>
@@ -20,7 +20,7 @@ export default function OpenedItem({ closeModal, itemId }) {
 					</div>
 				}
 				{
-					itemId == -1 &&
+					itemId == null &&
 					<div className='modalBox__container__nothing'>
 						<h2 className='modalBox__container__nothing__headerText'>nothing</h2>
 					</div>
