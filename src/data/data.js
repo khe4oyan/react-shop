@@ -47,7 +47,12 @@ const allObjects = {
 			[10, 50],
 			[0, 99],
 		]}],
-	])
+	]),
+
+	locations: new Map([
+		[0, {name: 'Garbage', timer: 2, money: [10, 50]}],
+		[1, {name: 'Work', timer: 5, money: [100, 350]}],
+	]),
 };
 
 const salaryNow = {

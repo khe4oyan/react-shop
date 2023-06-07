@@ -1,0 +1,7 @@
+.locations {}
+.locationsContainer {
+	padding: 10px;
+	display: grid;
+	width: 100%;
+	justify-content: initial;
+}
