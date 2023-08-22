@@ -19,7 +19,6 @@ export default function Categories({tools}) {
 		localStorage.setItem('category', categoryToggle);
 	}, [categoryToggle]);
 
-
 	return (
 		<div className="categories">
 			<div className="categories__header">

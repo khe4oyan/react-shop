@@ -2,3 +2,8 @@
 Play -> https://khe4oyan.github.io/react-shop/
 
 V.2.0. - moved project to react
+
+## future plans(V.3.0)
+
+- Full refactoring
+- Use Redux toolkit
