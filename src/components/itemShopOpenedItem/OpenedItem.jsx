@@ -12,7 +12,7 @@ export default function OpenedItem({ closeModal, itemId }) {
 				{
 					itemId != null &&
 					<div className='modalBox__container__itemInfo'>
-						<img className='modalBox__itemImg' src={`./items/${itemData.img}.png`} alt="droped item img" />
+						<img className='modalBox__itemImg' src={`/items/${itemData.img}.png`} alt="droped item img" />
 						<div className='modalBox__container__itemInfo__box'>
 							<h2 className='modalBox__container__itemInfo__name'>{ itemData.name }</h2>
 							<p className='modalBox__container__itemInfo__price'>${ itemData.priceWhenSell }</p>

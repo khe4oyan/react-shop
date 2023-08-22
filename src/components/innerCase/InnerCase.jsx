@@ -14,7 +14,7 @@ export default function InnerCase({closeModal, caseId}) {
 		domElem.push(
 			<div key={`key-${i}`} className='inner-case__box__item'>
 				<img 	className='inner-case__box__item__img' 
-					src={`https://raw.githubusercontent.com/khe4oyan/shop/gh-pages/items/${list.get(innerCase[i][0])}.png`} 
+					src={`/items/${list.get(innerCase[i][0])}.png`} 
 					alt="item img" />
 			</div>
 		);
