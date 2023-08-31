@@ -36,7 +36,7 @@ export default function ItemShop({ind, tools}) {
 		<>
 			<div className='item'>
 				<p className='item-name'>{itemData.name}</p>
-				<img className='item-img' src={`/items/${itemData.img}.png`} alt='item-img'/>
+				<img className='item-img' src={`${itemData.img}`} alt='item-img'/>
 				<p className='item-price'>{itemData.price}</p>
 				<button onClick={openButton} className='item-buy event_button item-case'>open</button>
 				<div className='item-info'>

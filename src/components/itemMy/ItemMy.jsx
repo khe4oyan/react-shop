@@ -21,7 +21,7 @@ export default function ItemMy({item, tools}) {
 		<div className='item'>
 			<p className='item-count'>x{count}</p>
 			<p className='item-name'>{itemData.name}</p>
-			<img className='item-img' src={`/items/${itemData.img}.png`} alt='item-img'/>
+			<img className='item-img' src={`${itemData.img}`} alt='item-img'/>
 			{
 				itemData.priceWhenSell == null ?
 				<>

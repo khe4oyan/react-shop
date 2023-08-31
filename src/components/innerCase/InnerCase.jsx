@@ -3,10 +3,10 @@ import allObjects from '../../data/data';
 
 export default function InnerCase({closeModal, caseId}) {
 	const list = new Map();
-	const items = allObjects.items.forEach((item, ind) => {
+	allObjects.items.forEach((item, ind) => {
 		list.set(ind, item.img);
 	});
-	
+
 	const innerCase = allObjects.cases.get(caseId).innerItems;
 	const domElem = [];
 
@@ -14,7 +14,7 @@ export default function InnerCase({closeModal, caseId}) {
 		domElem.push(
 			<div key={`key-${i}`} className='inner-case__box__item'>
 				<img 	className='inner-case__box__item__img' 
-					src={`/items/${list.get(innerCase[i][0])}.png`} 
+					src={`${list.get(innerCase[i][0])}`} 
 					alt="item img" />
 			</div>
 		);
