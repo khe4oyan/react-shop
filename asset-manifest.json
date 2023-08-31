@@ -1,14 +1,38 @@
 {
   "files": {
     "main.css": "./static/css/main.a81a4e12.css",
-    "main.js": "./static/js/main.a5e4114e.js",
+    "main.js": "./static/js/main.3458785e.js",
+    "static/media/gold_material.png": "./static/media/gold_material.f055d75a44a3a53d1fd9.png",
+    "static/media/rtx_shop_case.png": "./static/media/rtx_shop_case.4572ee058cd03a791765.png",
+    "static/media/box_gold.png": "./static/media/box_gold.6db8b11500b662075f0d.png",
     "static/media/vag-world-bold.ttf": "./static/media/vag-world-bold.3484d1f385e1ed2faa12.ttf",
+    "static/media/car_gold.png": "./static/media/car_gold.178c8e3c8a2951b1aa1a.png",
+    "static/media/rtx_videocard.png": "./static/media/rtx_videocard.8650ba2dd6d05c01540c.png",
+    "static/media/rtx_fish.png": "./static/media/rtx_fish.de0c4e74db9d1a322a16.png",
+    "static/media/trash_case.png": "./static/media/trash_case.71d753b83e46d97997bc.png",
+    "static/media/woodpile.png": "./static/media/woodpile.7882248be66c37467450.png",
+    "static/media/wheel.png": "./static/media/wheel.49d89d63e52280d2373e.png",
+    "static/media/pillow_a_class.png": "./static/media/pillow_a_class.8afda9722354645ebb38.png",
+    "static/media/iron_plates.png": "./static/media/iron_plates.e02f6c666fad2c2e12a1.png",
+    "static/media/ncoin.png": "./static/media/ncoin.18ca0ecec2c3311bb418.png",
+    "static/media/flower_in_vase.png": "./static/media/flower_in_vase.ad4f906b8f310f1e0bb3.png",
+    "static/media/car.png": "./static/media/car.cfb3a10c770949db997d.png",
+    "static/media/rtx_fragment.png": "./static/media/rtx_fragment.7fa90382d787568bdc0b.png",
+    "static/media/fish.png": "./static/media/fish.acb81f07b95f1a3531d1.png",
+    "static/media/box.png": "./static/media/box.173062f212c2b29f305d.png",
+    "static/media/videocard.png": "./static/media/videocard.90eabcb6f005b3ed0d18.png",
+    "static/media/flower.png": "./static/media/flower.0392cbfee91145ed688f.png",
+    "static/media/hat.png": "./static/media/hat.c07b95eac7d9a2c51d68.png",
+    "static/media/shop_case.png": "./static/media/shop_case.12b3b7c1e7b7bd4c89d7.png",
+    "static/media/case.png": "./static/media/case.958501655fc0c7f652ed.png",
+    "static/media/WIP.png": "./static/media/WIP.a2161fd33a4da40d72c2.png",
+    "static/media/vase.png": "./static/media/vase.667b6e54694e61bb317f.png",
     "index.html": "./index.html",
     "main.a81a4e12.css.map": "./static/css/main.a81a4e12.css.map",
-    "main.a5e4114e.js.map": "./static/js/main.a5e4114e.js.map"
+    "main.3458785e.js.map": "./static/js/main.3458785e.js.map"
   },
   "entrypoints": [
     "static/css/main.a81a4e12.css",
-    "static/js/main.a5e4114e.js"
+    "static/js/main.3458785e.js"
   ]
 }
