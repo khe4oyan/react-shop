@@ -1,35 +1,32 @@
+import React, { useEffect } from 'react';
 import './App.css'
-import { firstVisit, toolsCreate } from './tools/tools';
-
-import React, { useEffect, useState } from 'react';
 import Header from './components/header/Header'
 import Categories from './components/categories/Categories';
 import Crafts from './components/crafts/Crafts'
-
-firstVisit();
+import { loadMoneyThunk } from './store/slices/moneySlice';
+import { loadMyItemsThunk } from './store/slices/myItems';
+import { useDispatch } from 'react-redux';
 
 export default function App() {
-  const [money, setMoney] = useState(Number(localStorage.getItem('money')));
-  const [myItems, setMyItems] = useState(JSON.parse(localStorage.getItem('myItems')));
-  
-  useEffect(() => {
-    localStorage.setItem('money', money);
-  }, [money]);
-  useEffect(() => {
-    localStorage.setItem('myItems', JSON.stringify(myItems));
-  }, [myItems]);
+  const dispatch = useDispatch();
 
-  const addMoney = (count) => { setMoney(prev => prev += count); }
-  const remMoney = (count) => { setMoney(prev => prev -= count ); }
-  const hasMoney = (count) => { return (money < count) ? false : true; }
+  useEffect(() => {
+    if (localStorage.getItem('upd') == undefined) {
+      localStorage.clear();
+      localStorage.setItem('upd', 0); // future maybe used(now not used)
+      localStorage.setItem('money', 20_000);
+      localStorage.setItem('myItems', JSON.stringify([[5, 2]]));
+    }
 
-  const tools = toolsCreate(myItems, setMyItems, addMoney, remMoney, hasMoney);
+    dispatch(loadMoneyThunk());
+    dispatch(loadMyItemsThunk());
+  }, []);
 
   return (
     <div className='App'>
-      <Header money={money}/>
-      <Categories tools={tools}/>
-      <Crafts tools={tools}/>
+      <Header />
+      <Categories />
+      <Crafts />
     </div>
   );
 }

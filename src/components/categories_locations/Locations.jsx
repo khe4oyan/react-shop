@@ -3,7 +3,7 @@ import allObjects from "../../data/data";
 import Location from "./location/Location";
 import { useState } from 'react';
 
-export default function Locations({ tools }) {
+export default function Locations() {
 	const locations = allObjects.locations;
 	const locationsDOM = [];
 
@@ -12,7 +12,6 @@ export default function Locations({ tools }) {
 	for(const locationId of locations.keys()) {
 		locationsDOM.push(
 			<Location 
-				tools={tools}
 				busy={busy}
 				setBusy={setBusy}
 				data={locations.get(locationId)} 

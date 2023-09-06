@@ -1,7 +1,10 @@
 import './location.css';
 import { useState } from "react";
+import { addMoney } from '../../../store/slices/moneySlice';
+import { useDispatch } from 'react-redux';
 
-export default function Location({ data, tools, busy, setBusy }) {
+export default function Location({ data, busy, setBusy }) {
+	const dispatch = useDispatch();
 	const [timer, setTimer] = useState(data.timer);
 	const [isActive, setIsActive] = useState(false);
 	
@@ -15,7 +18,7 @@ export default function Location({ data, tools, busy, setBusy }) {
 				if (newTimer < 0) {
 					// give money
 					const [min, max] = data.money;
-					tools.money.addMoney(min + Math.floor(Math.random() * (max - min)));
+					dispatch(addMoney(min + Math.floor(Math.random() * (max - min))));
 					clearInterval(intervalId);
 					setBusy(false);
 					setIsActive(false);

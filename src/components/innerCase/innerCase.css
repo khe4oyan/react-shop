@@ -4,11 +4,17 @@
 }
 .inner-case__box {
 	background-color: white;
+	max-height: 90dvh;
 	padding: 10px;
-	display: grid;
 	width: 80%;
-	grid-template-columns: repeat(3, 1fr);
+	max-width: 800px;
 	position: relative;
+}
+.inner-case__box_box {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	max-height: 80dvh;
+	overflow: auto;
 }
 /* .inner-case__box__item {} */
 .inner-case__box__item__img {
