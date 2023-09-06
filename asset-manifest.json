@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.a81a4e12.css",
-    "main.js": "./static/js/main.3458785e.js",
+    "main.css": "./static/css/main.a3ea5bf4.css",
+    "main.js": "./static/js/main.5445a969.js",
     "static/media/gold_material.png": "./static/media/gold_material.f055d75a44a3a53d1fd9.png",
     "static/media/rtx_shop_case.png": "./static/media/rtx_shop_case.4572ee058cd03a791765.png",
     "static/media/box_gold.png": "./static/media/box_gold.6db8b11500b662075f0d.png",
@@ -28,11 +28,11 @@
     "static/media/WIP.png": "./static/media/WIP.a2161fd33a4da40d72c2.png",
     "static/media/vase.png": "./static/media/vase.667b6e54694e61bb317f.png",
     "index.html": "./index.html",
-    "main.a81a4e12.css.map": "./static/css/main.a81a4e12.css.map",
-    "main.3458785e.js.map": "./static/js/main.3458785e.js.map"
+    "main.a3ea5bf4.css.map": "./static/css/main.a3ea5bf4.css.map",
+    "main.5445a969.js.map": "./static/js/main.5445a969.js.map"
   },
   "entrypoints": [
-    "static/css/main.a81a4e12.css",
-    "static/js/main.3458785e.js"
+    "static/css/main.a3ea5bf4.css",
+    "static/js/main.5445a969.js"
   ]
 }
