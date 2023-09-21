@@ -25,9 +25,9 @@ export default function ItemShop({ ind }) {
 
 		itemList = createCaseInnerList(itemData);
 		givenItemIndex = setGivenItemIndex(() => {
+			dispatch(remMoney(casePrice));
 			let newVal = randomGetItemIndex(itemList);
 			if (newVal == null) { return; }
-			dispatch(remMoney(casePrice));
 			dispatch(addNewItem(newVal));
 
 			return newVal;
